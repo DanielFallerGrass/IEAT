@@ -12,9 +12,9 @@ class ProductsController < ApplicationController
 
     respond_to do |format|
       if @product.save
-        format.html { render :index, notice: 'Produto criado' }
+        format.html { redirect_to products_path, notice: 'Produto criado' }
       else
-        format.html { render :new }
+        product.html { render :new }
       end
     end
   end
